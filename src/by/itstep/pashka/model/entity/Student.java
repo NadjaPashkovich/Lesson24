@@ -3,16 +3,21 @@ package by.itstep.pashka.model.entity;
 public class Student extends Human {
     public static final int MAX_AGE = 100;
     public static final int MIN_AGE = 0;
+
     private double mark;
+    private String name;
+    private MarkNote note;
 
     public Student() {
-        super();
+       super();
+       note = new MarkNote();
+       super.name = "Alex";
     }
 
     public Student(String name, int age, double mark) {
-        this.name = name;
-        this.age = age;
+       super(name, age);
         this.mark = mark;
+        note = new MarkNote(mark);
     }
 
     public double getMark() {
@@ -21,12 +26,12 @@ public class Student extends Human {
 
     public void setMark(int mark) {
         if (mark >= MIN_AGE && mark <= MAX_AGE) {
-            this.mark = mark;
+            note.setMark(mark);
         }
     }
 
     public String getInfo() {
-        return name + ": age =  " + age + ", mark = " + mark;
+        return super.getInfo() + ", mark = " + mark;
     }
 }
 
