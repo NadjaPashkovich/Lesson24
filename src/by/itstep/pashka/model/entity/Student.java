@@ -1,24 +1,32 @@
 package by.itstep.pashka.model.entity;
 
 public class Student extends Human {
-    private int mark;
+    public static final int MAX_AGE = 100;
+    public static final int MIN_AGE = 0;
+    private double mark;
 
     public Student() {
-
+        super();
     }
 
     public Student(String name, int age, double mark) {
-        setName("");
-        setAge(age);
+        this.name = name;
+        this.age = age;
         this.mark = mark;
     }
 
-    public int getMark() {
+    public double getMark() {
         return mark;
     }
 
     public void setMark(int mark) {
-        this.mark = mark;
+        if (mark >= MIN_AGE && mark <= MAX_AGE) {
+            this.mark = mark;
+        }
+    }
+
+    public String getInfo() {
+        return name + ": age =  " + age + ", mark = " + mark;
     }
 }
 

@@ -3,8 +3,9 @@ package by.itstep.pashka.model.entity;
 public class Human {
     public static final int MAX_AGE = 100;
     public static final int MIN_AGE = 0;
-    private String name;
-    private int age;
+
+    protected String name;
+    protected int age;
 
     public Human() {
     }
@@ -34,6 +35,6 @@ public class Human {
 
 
     public String getInfo() {
-        return name = ": age =  " +age;
+        return name + ": age =  " +age;
     }
 }
